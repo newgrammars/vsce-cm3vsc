@@ -1,0 +1,85 @@
+{
+  "name": "cm3vsc",
+  "displayName": "Modula-3 and Quake Language Basics",
+  "description": "Provides syntax highlighting and snippets for Modula-3 and Quake",
+  "version": "1.2.8",
+  "publisher": "jc",
+  "galleryBanner": {
+    "color": "#f0f0f0",
+    "theme": "light"
+  },
+  "engines": {
+    "vscode": "^1.0.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets"
+  ],
+  "keywords": [
+    "Modula-3",
+    "Modula",
+    "Quake",
+    "m3makefile",
+    "CM3"
+  ],
+  "icon": "images/icon.png",
+  "license": "BSD-3-Clause",
+  "contributes": {
+    "languages": [
+      {
+        "id": "m3",
+        "aliases": [
+          "Modula-3",
+          "modula-3",
+          "modula3",
+          "m3",
+          "cm3"
+        ],
+        "extensions": [
+          ".m3",
+          ".mg",
+          ".i3",
+          ".ig"
+        ],
+        "configuration": "./m3-language-configuration.json"
+      },
+      {
+        "id": "quake",
+        "aliases": [
+          "Quake",
+          "quake"
+        ],
+        "filenames": [
+          "m3makefile",
+          "m3overrides"
+        ],
+        "extensions": [
+          "tmpl"
+        ],
+        "configuration": "./quake-language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "m3",
+        "scopeName": "source.modula-3",
+        "path": "./syntaxes/m3.tmLanguage"
+      },
+      {
+        "language": "quake",
+        "scopeName": "source.quake",
+        "path": "./syntaxes/quake.tmLanguage"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "m3",
+        "path": "./snippets/m3.json"
+      },
+      {
+        "language": "quake",
+        "path": "./snippets/quake.json"
+      }
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "decl_local": {
+    "description": "Local declaration",
+    "scope": "quake",
+    "prefix": "local",
+    "body": ["local ${0:decl}"]
+  },
+  "decl_readonly": {
+    "description": "Read-only declaration",
+    "scope": "quake",
+    "prefix": "readonly",
+    "body": ["readonly ${0:decl}"]
+  },
+  "decl_proc": {
+    "description": "Procedure declaration",
+    "scope": "quake",
+    "prefix": "proc",
+    "body": [
+      "proc ${1:name} (${2:param_list}) is",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "stmt_if": {
+    "description": "if statement",
+    "scope": "quake",
+    "prefix": "if",
+    "body": [
+      "if ${1:condition}",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "stmt_ife": {
+    "description": "if statement (with else)",
+    "scope": "quake",
+    "prefix": "if",
+    "body": [
+      "if ${1:condition}",
+      "\t${2}",
+      "else",
+      "\t${0}",
+      "end"
+    ]
+  }
+}

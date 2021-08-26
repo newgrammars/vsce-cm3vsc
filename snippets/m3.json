@@ -1,0 +1,587 @@
+{
+  "decl_var": {
+    "description": "Variable declaration",
+    "scope": "modula-3",
+    "prefix": "VAR",
+    "body": [
+      "VAR ${1:name}: ${0:type}"
+    ]
+  },
+  "decl_vard": {
+    "description": "Variable declaration (with default value)",
+    "scope": "modula-3",
+    "prefix": "VAR",
+    "body": [
+      "VAR ${1:name} := ${0:default}"
+    ]
+  },
+  "decl_varz": {
+    "description": "Variable declaration (with default value and ascribed type)",
+    "scope": "modula-3",
+    "prefix": "VAR",
+    "body": [
+      "VAR ${1:name}: ${2:type} := ${0:default}"
+    ]
+  },
+  "decl_const": {
+    "description": "Constant declaration",
+    "scope": "modula-3",
+    "prefix": "CONST",
+    "body": [
+      "CONST ${1:name} = ${0:value}"
+    ]
+  },
+  "decl_consta": {
+    "description": "Constant declaration (with ascribed type)",
+    "scope": "modula-3",
+    "prefix": "CONST",
+    "body": [
+      "CONST ${1:name}: ${2:type} = ${0:value}"
+    ]
+  },
+  "decl_excption": {
+    "description": "Exception declaration",
+    "scope": "modula-3",
+    "prefix": "EXCEPTION",
+    "body": [
+      "EXCEPTION ${0:name}"
+    ]
+  },
+  "decl_excptiona": {
+    "description": "Exception declaration (with argument)",
+    "scope": "modula-3",
+    "prefix": "EXCEPTION",
+    "body": [
+      "EXCEPTION ${1:name} (${0:type})"
+    ]
+  },
+  "decl_type": {
+    "description": "Type declaration",
+    "scope": "modula-3",
+    "prefix": "TYPE",
+    "body": [
+      "TYPE ${1:name} = ${0:type}"
+    ]
+  },
+  "decl_typeo": {
+    "description": "Opaque type declaration",
+    "scope": "modula-3",
+    "prefix": "TYPE",
+    "body": [
+      "TYPE ${1:name} <: ${0:ref_type}"
+    ]
+  },
+  "decl_reveal": {
+    "description": "Complete revealation declaration",
+    "scope": "modula-3",
+    "prefix": "REVEAL",
+    "body": [
+      "REVEAL ${1:name} = ${0:branded_type}"
+    ]
+  },
+  "decl_revealp": {
+    "description": "Partial revealation declaration",
+    "scope": "modula-3",
+    "prefix": "REVEAL",
+    "body": [
+      "REVEAL ${1:name} <: ${0:ref_type}"
+    ]
+  },
+  "decl_proc": {
+    "description": "Proper procedure declaration",
+    "scope": "modula-3",
+    "prefix": "PROCEDURE",
+    "body": [
+      "PROCEDURE ${1:name} (${0:arg_list})"
+    ]
+  },
+  "decl_proc_body": {
+    "description": "Proper procedure declaration with body",
+    "scope": "modula-3",
+    "prefix": "PROCEDURE",
+    "body": [
+      "PROCEDURE ${1:name} (${2:arg_list}) =",
+      "\tBEGIN",
+      "\t\t${0}",
+      "\tEND ${1}"
+    ]
+  },
+  "decl_procf": {
+    "description": "Function procedure declaration",
+    "scope": "modula-3",
+    "prefix": "PROCEDURE",
+    "body": [
+      "PROCEDURE ${1:name} (${2:arg_list}): ${0:ret_type}"
+    ]
+  },
+  "decl_procf_body": {
+    "description": "Function procedure declaration with body",
+    "scope": "modula-3",
+    "prefix": "PROCEDURE",
+    "body": [
+      "PROCEDURE ${1:name} (${2:arg_list}): ${3:ret_type} =",
+      "\tBEGIN",
+      "\t\t${0}",
+      "\tEND ${1}"
+    ]
+  },
+  "decl_proce": {
+    "description": "Proper procedure declaration (with RAISES set)",
+    "scope": "modula-3",
+    "prefix": "PROCEDURE",
+    "body": [
+      "PROCEDURE ${1:name} (${2:arg_list}) RAISES {${0:exception_list}}"
+    ]
+  },
+  "decl_procfe": {
+    "description": "Function procedure declaration with RAISES set",
+    "scope": "modula-3",
+    "prefix": "PROCEDURE",
+    "body": [
+      "PROCEDURE ${1:name} (${2:arg_list}): ${3:ret_type} RAISES {${0:exception_list}}"
+    ]
+  },
+  "decl_proce_body": {
+    "description": "Proper procedure declaration with RAISES set and body",
+    "scope": "modula-3",
+    "prefix": "PROCEDURE",
+    "body": [
+      "PROCEDURE ${1:name} (${2:arg_list}) RAISES {${3:exception_list}} =",
+      "\tBEGIN",
+      "\t\t${0}",
+      "\tEND ${1}"
+    ]
+  },
+  "decl_procfe_body": {
+    "description": "Function procedure declaration with RAISES set and body",
+    "scope": "modula-3",
+    "prefix": "PROCEDURE",
+    "body": [
+      "PROCEDURE ${1:name} (${2:arg_list}): ${3:ret_type} RAISES {${4:exception_list}}",
+      "\tBEGIN",
+      "\t\t${0}",
+      "\tEND ${1}"
+    ]
+  },
+  "tx_brand": {
+    "description": "Branded type expression",
+    "scope": "modula-3",
+    "prefix": "BRANDED",
+    "body": [
+      "BRANDED ${1:brand} ${0:obj_or_ref_type}"
+    ]
+  },
+  "tx_ref": {
+    "description": "Reference type expression",
+    "scope": "modula-3",
+    "prefix": "REF",
+    "body": [
+      "REF ${0:referent_type}"
+    ]
+  },
+  "tx_refu": {
+    "description": "Untraced reference type expression",
+    "scope": "modula-3",
+    "prefix": "UNTRACED",
+    "body": [
+      "UNTRACED REF ${0:referent_type}"
+    ]
+  },
+  "tx_array": {
+    "description": "Array type expression",
+    "scope": "modula-3",
+    "prefix": "ARRAY",
+    "body": [
+      "ARRAY ${1:type_list} OF ${0:type}"
+    ]
+  },
+  "tx_arrayo": {
+    "description": "Open array type expression",
+    "scope": "modula-3",
+    "prefix": "ARRAY OF",
+    "body": [
+      "ARRAY OF ${0:type}"
+    ]
+  },
+  "tx_set": {
+    "description": "Set type expression",
+    "scope": "modula-3",
+    "prefix": "SET OF",
+    "body": [
+      "SET OF ${0:type}"
+    ]
+  },
+  "tx_packed": {
+    "description": "Packed type expression",
+    "scope": "modula-3",
+    "prefix": "BITS",
+    "body": [
+      "BITS (${1:bits}) FOR ${0:type}"
+    ]
+  },
+  "tx_record": {
+    "description": "Record type expression",
+    "scope": "modula-3",
+    "prefix": "RECORD",
+    "body": [
+      "RECORD",
+      "\t${0:field_list}",
+      "END"
+    ]
+  },
+  "tx_object": {
+    "description": "Object type expression",
+    "scope": "modula-3",
+    "prefix": "OBJECT",
+    "body": [
+      "OBJECT",
+      "\t${0:field_list}",
+      "END"
+    ]
+  },
+  "tx_objectm": {
+    "description": "Object type expression (with methods)",
+    "scope": "modula-3",
+    "prefix": "OBJECT",
+    "body": [
+      "OBJECT",
+      "\t${1:field_list}",
+      "METHODS",
+      "\t${0:method_list}",
+      "END"
+    ]
+  },
+  "tx_objecto": {
+    "description": "Object type expression (with overrides)",
+    "scope": "modula-3",
+    "prefix": "OBJECT",
+    "body": [
+      "OBJECT",
+      "\t${1:field_list}",
+      "OVERRIDES",
+      "\t${0:override_list}",
+      "END"
+    ]
+  },
+  "tx_objectmo": {
+    "description": "Object type expression (with methods and overrides)",
+    "scope": "modula-3",
+    "prefix": "OBJECT",
+    "body": [
+      "OBJECT",
+      "\t${1:field_list}",
+      "METHODS",
+      "\t${2:method_list}",
+      "OVERRIDES",
+      "\t${0:override_list}",
+      "END"
+    ]
+  },
+  "tx_proc": {
+    "description": "Procedure type expression (no return type)",
+    "scope": "modula-3",
+    "prefix": "PROCEDURE (",
+    "body": [
+      "PROCEDURE (${0:arg_list})"
+    ]
+  },
+  "tx_procf": {
+    "description": "Function procedure type expression",
+    "scope": "modula-3",
+    "prefix": "PROCEDURE (",
+    "body": [
+      "PROCEDURE (${1:arg_list}): ${0:ret_type}"
+    ]
+  },
+  "tx_proce": {
+    "description": "Proper procedure type expression (with RAISES set)",
+    "scope": "modula-3",
+    "prefix": "PROCEDURE (",
+    "body": [
+      "PROCEDURE (${1:arg_list}) RAISES {${0:exception_list}}"
+    ]
+  },
+  "tx_procfe": {
+    "description": "Function procedure type expression (with RAISES set)",
+    "scope": "modula-3",
+    "prefix": "PROCEDURE (",
+    "body": [
+      "PROCEDURE (${1:arg_list}): ${2:ret_type} RAISES {${0:exception_list}}"
+    ]
+  },
+  "stmt_block": {
+    "description": "Block statement (BEGIN–END only)",
+    "scope": "modula-3",
+    "prefix": "BEGIN",
+    "body": [
+      "BEGIN",
+      "\t${0}",
+      "END"
+    ]
+  },
+  "stmt_with": {
+    "description": "WITH statement",
+    "scope": "modula-3",
+    "prefix": "WITH",
+    "body": [
+      "WITH ${1:binding_list} DO",
+      "\t${0}",
+      "END"
+    ]
+  },
+  "stmt_loop": {
+    "description": "LOOP statement",
+    "scope": "modula-3",
+    "prefix": "LOOP",
+    "body": [
+      "LOOP",
+      "\t${0}",
+      "END"
+    ]
+  },
+  "stmt_if1": {
+    "description": "IF statement (with 1 condition)",
+    "scope": "modula-3",
+    "prefix": "IF",
+    "body": [
+      "IF ${1:condition} THEN",
+      "\t${0}",
+      "END"
+    ]
+  },
+  "stmt_if1e": {
+    "description": "IF statement (with 1 condition and ELSE)",
+    "scope": "modula-3",
+    "prefix": "IF",
+    "body": [
+      "IF ${1:condition} THEN",
+      "\t${2}",
+      "ELSE",
+      "\t${0}",
+      "END"
+    ]
+  },
+  "stmt_if2": {
+    "description": "IF statement (with 2 conditions)",
+    "scope": "modula-3",
+    "prefix": "IF",
+    "body": [
+      "IF ${1:condition_1} THEN",
+      "\t${2}",
+      "ELSIF ${3:condition_2} THEN",
+      "\t${0}",
+      "END"
+    ]
+  },
+  "stmt_if2e": {
+    "description": "IF statement (with 2 conditions and ELSE)",
+    "scope": "modula-3",
+    "prefix": "IF",
+    "body": [
+      "IF ${1:condition_1} THEN",
+      "\t${2}",
+      "ELSIF ${3:condition_2}",
+      "\t${4}",
+      "ELSE",
+      "\t${0}",
+      "END"
+    ]
+  },
+  "stmt_for": {
+    "description": "FOR statement",
+    "scope": "modula-3",
+    "prefix": "FOR",
+    "body": [
+      "FOR ${1:index} := ${2:first} TO ${3:last} DO",
+      "\t${0}",
+      "END"
+    ]
+  },
+  "stmt_fors": {
+    "description": "FOR statement (with step)",
+    "scope": "modula-3",
+    "prefix": "FOR",
+    "body": [
+      "FOR ${1:index} := ${2:first} TO ${3:last} BY ${4:step} DO",
+      "\t${0}",
+      "END"
+    ]
+  },
+  "stmt_repeat": {
+    "description": "REPEAT statement",
+    "scope": "modula-3",
+    "prefix": "REPEAT",
+    "body": [
+      "REPEAT",
+      "\t${0}",
+      "UNTIL ${1:condition}"
+    ]
+  },
+  "stmt_while": {
+    "description": "WHILE statement",
+    "scope": "modula-3",
+    "prefix": "WHILE",
+    "body": [
+      "WHILE ${1:condition} DO",
+      "\t${0}",
+      "END"
+    ]
+  },
+  "stmt_case1": {
+    "description": "CASE statement (with 1 arm)",
+    "scope": "modula-3",
+    "prefix": "CASE",
+    "body": [
+      "CASE ${1:expr} OF",
+      "\t${2:const_list_1} => ${3}",
+      "ELSE",
+      "\t${0}",
+      "END"
+    ]
+  },
+  "stmt_case2": {
+    "description": "CASE statement (with 2 arms)",
+    "scope": "modula-3",
+    "prefix": "CASE",
+    "body": [
+      "CASE ${1:expr} OF",
+      "\t${2:const_list_1} => ${3}",
+      "|\t${4:const_list_2} => ${5}",
+      "ELSE",
+      "\t${0}",
+      "END"
+    ]
+  },
+  "stmt_case3": {
+    "description": "CASE statement (with 3 arms)",
+    "scope": "modula-3",
+    "prefix": "CASE",
+    "body": [
+      "CASE ${1:expr} OF",
+      "\t${2:const_list_1} => ${3}",
+      "|\t${4:const_list_2} => ${5}",
+      "|\t${6:const_list_3} => ${7}",
+      "ELSE",
+      "\t${0}",
+      "END"
+    ]
+  },
+  "stmt_tcase1": {
+    "description": "TYPECASE statement (with 1 arm)",
+    "scope": "modula-3",
+    "prefix": "TYPECASE",
+    "body": [
+      "TYPECASE ${1:expr} OF",
+      "\t${2:type_list_1} => ${3}",
+      "ELSE",
+      "\t${0}",
+      "END"
+    ]
+  },
+  "stmt_tcase2": {
+    "description": "TYPECASE statement (with 2 arms)",
+    "scope": "modula-3",
+    "prefix": "TYPECASE",
+    "body": [
+      "TYPECASE ${1:expr} OF",
+      "\t${2:type_list_1} => ${3}",
+      "|\t${4:type_list_2} => ${5}",
+      "ELSE",
+      "\t${0}",
+      "END"
+    ]
+  },
+  "stmt_tcase3": {
+    "description": "TYPECASE statement (with 3 arms)",
+    "scope": "modula-3",
+    "prefix": "TYPECASE",
+    "body": [
+      "TYPECASE ${1:expr} OF",
+      "\t${2:type_list_1} => ${3}",
+      "|\t${4:type_list_2} => ${5}",
+      "|\t${6:type_list_3} => ${7}",
+      "ELSE",
+      "\t${0}",
+      "END"
+    ]
+  },
+  "stmt_lock": {
+    "description": "LOCK statement",
+    "scope": "modula-3",
+    "prefix": "LOCK",
+    "body": [
+      "LOCK ${1:mutex} DO",
+      "\t${0}",
+      "END"
+    ]
+  },
+  "stmt_try": {
+    "description": "TRY–EXCEPT statement",
+    "scope": "modula-3",
+    "prefix": "TRY",
+    "body": [
+      "TRY",
+      "\t${1}",
+      "EXCEPT ELSE",
+      "\t${0}",
+      "END"
+    ]
+  },
+  "stmt_try1": {
+    "description": "TRY–EXCEPT statement (with 1 EXCEPT arm)",
+    "scope": "modula-3",
+    "prefix": "TRY",
+    "body": [
+      "TRY",
+      "\t${1}",
+      "EXCEPT",
+      "\t${2:exception_list_1} => ${3}",
+      "ELSE",
+      "\t${0}",
+      "END"
+    ]
+  },
+  "stmt_try2": {
+    "description": "TRY–EXCEPT statement (with 2 EXCEPT arms)",
+    "scope": "modula-3",
+    "prefix": "TRY",
+    "body": [
+      "TRY",
+      "\t${1}",
+      "EXCEPT",
+      "\t${2:exception_list_1} => ${3}",
+      "|\t${4:exception_list_2} => ${5}",
+      "ELSE",
+      "\t${0}",
+      "END"
+    ]
+  },
+  "stmt_try3": {
+    "description": "TRY–EXCEPT statement (with 3 EXCEPT arms)",
+    "scope": "modula-3",
+    "prefix": "TRY",
+    "body": [
+      "TRY",
+      "\t${1}",
+      "EXCEPT",
+      "\t${2:exception_list_1} => ${3}",
+      "|\t${4:exception_list_2} => ${5}",
+      "|\t${6:exception_list_2} => ${7}",
+      "ELSE",
+      "\t${0}",
+      "END"
+    ]
+  },
+  "stmt_tryf": {
+    "description": "TRY–FINALLY statement",
+    "scope": "modula-3",
+    "prefix": "TRY",
+    "body": [
+      "TRY",
+      "\t${1}",
+      "FINALLY",
+      "\t${0}",
+      "END"
+    ]
+  }
+}
