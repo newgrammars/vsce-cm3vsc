@@ -41,7 +41,7 @@
           ".i3",
           ".ig"
         ],
-        "configuration": "./m3-language-configuration.json"
+        "configuration": "./langcfg/m3.json"
       },
       {
         "id": "quake",
@@ -56,7 +56,7 @@
         "extensions": [
           "tmpl"
         ],
-        "configuration": "./quake-language-configuration.json"
+        "configuration": "./langcfg/quake.json"
       }
     ],
     "grammars": [
