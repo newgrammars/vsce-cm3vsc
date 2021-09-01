@@ -28,6 +28,9 @@ jobs:
     - run: |
         sudo npm install -g vsce
         vsce package -o "cm3vsc-$RELEASE_VERSION.vsix"
+        vsce publish -p $VSCE_TOKEN
+      env:
+        VSCE_TOKEN: ${{ secrets.VSCE_TOKEN }}
     - uses: softprops/action-gh-release@v1
       with:
         files: cm3vsc-${{ env.RELEASE_VERSION }}.vsix
