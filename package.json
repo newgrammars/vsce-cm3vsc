@@ -4,6 +4,11 @@
   "description": "Provides syntax highlighting and snippets for Modula-3 and Quake",
   "version": "1.2.8",
   "publisher": "jc",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/100083/vsce-cm3vsc"
+  },
   "galleryBanner": {
     "color": "#f0f0f0",
     "theme": "light"
