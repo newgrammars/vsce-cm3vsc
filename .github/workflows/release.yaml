@@ -1,0 +1,33 @@
+on:
+  create:
+
+jobs:
+  release:
+    if: ${{ startsWith(github.ref, 'refs/tags/v') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+    - uses: actions/checkout@v2
+    - shell: pwsh
+      env:
+        POWERSHELL_TELEMETRY_OPTOUT: '1'
+      run: |
+        if ($env:GITHUB_REF -match '^refs/tags/(v\d+\.\d+\.\d+)$')
+          { $releaseVersion = $Matches[1] }
+        else
+          { throw "Invalid ref: ${env:GITHUB_REF}" }
+        
+        $packageVersion = 'v' +
+          (Get-Content 'package.json' | ConvertFrom-Json).version;
+        if (-not ($packageVersion -ceq $releaseVersion)) {
+          throw ("Package version ${packageVersion} differs from " +
+            "release version ${releaseVersion}")
+        }
+        
+        Write-Output "RELEASE_VERSION=${releaseVersion}" >> $env:GITHUB_ENV
+    - run: |
+        sudo npm install -g vsce
+        vsce package -o "cm3vsc-$RELEASE_VERSION.vsix"
+    - uses: softprops/action-gh-release@v1
+      with:
+        files: cm3vsc-${{ env.RELEASE_VERSION }}.vsix
