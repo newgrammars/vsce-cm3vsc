@@ -7,7 +7,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/100083/vsce-cm3vsc.git"
+    "url": "https://github.com/newgrammars/vsce-cm3vsc.git"
   },
   "galleryBanner": {
     "color": "#f0f0f0",
