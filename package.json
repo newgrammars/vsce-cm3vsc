@@ -2,7 +2,7 @@
   "name": "cm3vsc",
   "displayName": "Modula-3 and Quake Language Basics",
   "description": "Provides syntax highlighting and snippets for Modula-3 and Quake",
-  "version": "1.2.11",
+  "version": "1.2.12",
   "publisher": "jc",
   "private": true,
   "repository": {
